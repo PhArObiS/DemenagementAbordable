@@ -9,7 +9,7 @@
     <title>DéménagementAbordable.com</title>
     <link rel="icon" type="image/x-icon" href="/img/demenagementAbordableFavicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/stylesDevis.css" />
+    <link rel="stylesheet" type="text/css" href="/common/css/stylesDevis.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/638cc87a5a.js" crossorigin="anonymous"></script>
@@ -40,6 +40,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="langToggle" class="btn btn-link lang-switch" data-lang="fr"
+                            aria-label="Toggle Language">
+                            <span class="language-text">fr</span>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -144,83 +150,90 @@
                                 <input class="form-check-input" type="checkbox" id="cuisiniere" name="spaManage"
                                     value="OK">
                                 <label class="form-check-label" for="cuisiniere">Stove</label>
+                                <input type="number" id="cuisiniereQuantity" name="cuisiniereQuantity"
+                                    placeholder="Quantity">
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="dryer" name="spaManage" value="OK">
-                                <label class="form-check-label" for="dryer">Dryer</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="dishwasher" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="dishwasher">Dishwasher</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="mattress" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="mattress">Mattress</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="washer" name="spaManage" value="OK">
-                                <label class="form-check-label" for="washer">Washer</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="bed-frame" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="bed-frame">Bed Frame</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="refrigerator" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="refrigerator">Refrigerator</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="dresser" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="dresser">Dresser(s)</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="tv-stand" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="tv-stand">TV Stand</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="sofa" name="spaManage" value="OK">
-                                <label class="form-check-label" for="sofa">Sofa(s)</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="kitchen-table" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="kitchen-table">Kitchen Table</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="coffee-table" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="coffee-table">Coffee Table</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="nightstand" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="nightstand">Nightstand</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="furniture" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="furniture">Furniture</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="tv" name="spaManage" value="OK">
-                                <label class="form-check-label" for="tv">TV(s)</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="futon" name="spaManage" value="OK">
-                                <label class="form-check-label" for="futon">Futon(s)</label>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="dryer" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="dryer">Dryer</label>
                                 </div>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="dishwasher" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="dishwasher">Dishwasher</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="mattress" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="mattress">Mattress</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="washer" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="washer">Washer</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="bed-frame" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="bed-frame">Bed Frame</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="refrigerator" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="refrigerator">Refrigerator</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="dresser" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="dresser">Dresser(s)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="tv-stand" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="tv-stand">TV Stand</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sofa" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="sofa">Sofa(s)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="kitchen-table" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="kitchen-table">Kitchen Table</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="coffee-table" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="coffee-table">Coffee Table</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="nightstand" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="nightstand">Nightstand</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="furniture" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="furniture">Furniture</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="tv" name="spaManage" value="OK">
+                                    <label class="form-check-label" for="tv">TV(s)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="futon" name="spaManage"
+                                        value="OK">
+                                    <label class="form-check-label" for="futon">Futon(s)</label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="reset" class="btn btn-secondary">Reset</button>
+                                    </div>
+                                </div>
                     </form>
 
                     <!-- Form from the Montreal-Tourism example ends here -->
@@ -248,9 +261,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WuEPw207qb9C6QiUT9R2m-ggF1CzrYs&callback=initMap"></script>
+    <script src="common/js/scripts.js"></script>
 
 </body>
 

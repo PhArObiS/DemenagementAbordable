@@ -32,23 +32,67 @@ window.onscroll = function () {
 // Contact form
 $(document).ready(function () {
   $("#contact-form").submit(function (event) {
+    // Prevent the form from submitting the traditional way
     event.preventDefault();
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var telephone = $("#phone").val();
-    var message = $("#message").val();
-    $.ajax({
-      method: "POST",
-      url: "https://demenagementabordable.com/api/send-lead",
-      data: {
-        name: name,
-        email: email,
-        telephone: telephone,
-        message: message,
-      },
-    }).done(function (msg) {
-      alert("Email Sent");
+
+    // Gather form data
+    const formData = {
+      name: $("#name").val(),
+      email: $("#email").val(),
+      phone: $("#phone").val(),
+      message: $("#message").val(),
+    };
+
+    // Send the form data to the specified endpoint
+    $.post("https://formspree.io/f/mwkjzrww", formData)
+      .done(function () {
+        // Display a success message to the user
+        alert("Votre message a été envoyé avec succès!");
+
+        // Optionally, reset the form after successful submission
+        $("#contact-form")[0].reset();
+      })
+      .fail(function () {
+        // Display an error message to the user
+        alert("Échec de l'envoi du message. Veuillez réessayer plus tard.");
+      });
+  });
+});
+
+// Form validation and submission quote
+$(document).ready(function () {
+  $(".myForm").submit(function (event) {
+    // Prevent the form from submitting the traditional way
+    event.preventDefault();
+
+    // Gather form data
+    const formData = {
+      name: $("#name").val(),
+      email: $("#email").val(),
+      phone: $("#phone").val(),
+      etages: $("#etages").val(),
+      pieces: $("#pieces").val(),
+      boites: $("#boites").val(),
+    };
+
+    // Add checked checkboxes to formData
+    $(":checkbox:checked").each(function () {
+      formData[$(this).attr("id")] = "OK";
     });
+
+    // Send the form data to the specified endpoint
+    $.post("https://formspree.io/f/xzbnvjyv", formData)
+      .done(function () {
+        // Display a success message to the user
+        alert("Votre message a été envoyé avec succès!");
+
+        // Optionally, reset the form after successful submission
+        $(".myForm")[0].reset();
+      })
+      .fail(function () {
+        // Display an error message to the user
+        alert("Échec de l'envoi du message. Veuillez réessayer plus tard.");
+      });
   });
 });
 
