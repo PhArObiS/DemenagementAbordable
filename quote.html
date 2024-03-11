@@ -7,9 +7,9 @@
     <meta name="description"
         content="Demenagement abordable propose des services pour gérer tous vos projets de déménagement résidentiels à Montréal et ses alentours." />
     <title>DéménagementAbordable.com</title>
-    <link rel="icon" type="image/x-icon" href="/img/demenagementAbordableFavicon.ico">
+    <link rel="icon" type="image/x-icon" href="/img/demenagementAbordableFavicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/stylesDevis.css" />
+    <link rel="stylesheet" type="text/css" href="/css/stylesDevis.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/638cc87a5a.js" crossorigin="anonymous"></script>
@@ -30,13 +30,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Accueil</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Propos</a>
+                        <a class="nav-link" href="/">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="devis.html">Devis</a>
+                        <a class="nav-link" href="quote.html">Quote</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/">Contact</a>
@@ -48,10 +48,10 @@
     <main>
 
         <section class="content-section">
-            <h1>Vous cherchez un déménagement abordable?</h1>
+            <h1>Are you looking for an affordable move?</h1>
             <p>
-                Les prix ci-dessous n'incluent pas le 23 juin au 2 juillet. Appelez ou envoyez un courriel pour plus
-                d'informations.
+                Prices below do not include June 23 to July 2. Call or email for more
+                information.
             </p>
 
         </section>
@@ -60,33 +60,34 @@
         <section class="options-section">
             <div class="section-content options">
                 <div id="estimate" class="title">
-                    <h2>Devis de déplacement</h2>
-                    <p>Saisir toutes les informations.</p>
+                    <h2>Quote for your move</h2>
+                    <p>Enter all information.</p>
                 </div>
 
                 <!-- Form from the Montreal-Tourism example starts here -->
+                <!-- Moving Quote Form -->
                 <div class="formContainer">
                     <form class="myForm" onsubmit="return validate_user();">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="name">Nom:*</label>
+                                <label for="name">Name:*</label>
                                 <input id="name" type="text" name="user_name" class="form-control"
-                                    placeholder="Votre nom" maxlength="50" required>
+                                    placeholder="Your name" maxlength="50" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">E-Mail:*</label>
                                 <input id="email" type="email" name="user_email" class="form-control"
-                                    placeholder="Votre adresse e-mail" maxlength="50" required>
+                                    placeholder="Your email address" maxlength="50" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="phone">Téléphone:*</label>
+                                <label for="phone">Phone:*</label>
                                 <input id="phone" type="text" name="phone" class="form-control" maxlength="19"
                                     placeholder="nn-(nnn)-nnn-nnnn" required>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="pieces">Nombre de pièces:</label>
+                                <label for="pieces">Number of Rooms:</label>
                                 <select id="pieces" name="etages" class="form-control">
                                     <option value="1e">1 1/2</option>
                                     <option value="2e">2 1/2</option>
@@ -96,23 +97,23 @@
                                     <option value="6e">6 1/2</option>
                                     <option value="7e">7 1/2</option>
                                     <option value="8e">8 1/2</option>
-                                    <option value="maison">Maison</option>
+                                    <option value="maison">House</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="etages">Étages:</label>
+                                <label for="etages">Floors:</label>
                                 <select id="etages" name="etages" class="form-control">
-                                    <option value="1e">1 étage</option>
-                                    <option value="2e" selected="selected">2 étages</option>
-                                    <option value="3e">3 étages</option>
-                                    <option value="4e">4 étages</option>
-                                    <option value="5e">5 étages</option>
+                                    <option value="1e">1 floor</option>
+                                    <option value="2e" selected="selected">2 floors</option>
+                                    <option value="3e">3 floors</option>
+                                    <option value="4e">4 floors</option>
+                                    <option value="5e">5 floors</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="boites">Nombre approx. de boîtes à déménager:</label>
+                                <label for="boites">Approximate Number of Boxes to Move:</label>
                                 <select id="boites" name="personsDrop" class="form-control">
                                     <option value="1b" selected="selected">1</option>
                                     <option value="2b">2</option>
@@ -138,93 +139,90 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Cocher ce qui s'applique à votre déménagement:</label>
+                            <label>Check what applies to your move:</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="cuisiniere" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="cuisiniere">Cuisinière</label>
+                                <label class="form-check-label" for="cuisiniere">Stove</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="secheuse" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="dryer" name="spaManage" value="OK">
+                                <label class="form-check-label" for="dryer">Dryer</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="dishwasher" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="secheuse">Sécheuse</label>
+                                <label class="form-check-label" for="dishwasher">Dishwasher</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="lave-vaisselle" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="mattress" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="lave-vaisselle">Lave-vaisselle</label>
+                                <label class="form-check-label" for="mattress">Mattress</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="matelas" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="washer" name="spaManage" value="OK">
+                                <label class="form-check-label" for="washer">Washer</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="bed-frame" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="matelas">Matelas</label>
+                                <label class="form-check-label" for="bed-frame">Bed Frame</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="laveuse" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="refrigerator" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="laveuse">Laveuse</label>
+                                <label class="form-check-label" for="refrigerator">Refrigerator</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="base-de-lit" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="dresser" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="base-de-lit">Base de lit</label>
+                                <label class="form-check-label" for="dresser">Dresser(s)</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="refrigerateur" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="tv-stand" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="refrigerateur">Réfrigérateur</label>
+                                <label class="form-check-label" for="tv-stand">TV Stand</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="commode" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="sofa" name="spaManage" value="OK">
+                                <label class="form-check-label" for="sofa">Sofa(s)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="kitchen-table" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="commode">Commode(s)</label>
+                                <label class="form-check-label" for="kitchen-table">Kitchen Table</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="meuble-tv" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="coffee-table" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="meuble-tv">Meuble TV</label>
+                                <label class="form-check-label" for="coffee-table">Coffee Table</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="divan" name="spaManage" value="OK">
-                                <label class="form-check-label" for="divan">Divan(s)</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="table-de-cuisine" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="nightstand" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="table-de-cuisine">Table de cuisine</label>
+                                <label class="form-check-label" for="nightstand">Nightstand</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="table-de-salon" name="spaManage"
+                                <input class="form-check-input" type="checkbox" id="furniture" name="spaManage"
                                     value="OK">
-                                <label class="form-check-label" for="table-de-salon">Table de salon</label>
+                                <label class="form-check-label" for="furniture">Furniture</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="table-de-chevet" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="table-de-chevet">Table de chevet</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="meubles" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="meubles">Meubles</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="televiseur" name="spaManage"
-                                    value="OK">
-                                <label class="form-check-label" for="televiseur">Téléviseur(s)</label>
+                                <input class="form-check-input" type="checkbox" id="tv" name="spaManage" value="OK">
+                                <label class="form-check-label" for="tv">TV(s)</label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="futon" name="spaManage" value="OK">
                                 <label class="form-check-label" for="futon">Futon(s)</label>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
-                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
                             </div>
-                        </div>
                     </form>
+
                     <!-- Form from the Montreal-Tourism example ends here -->
                 </div>
             </div>
@@ -232,6 +230,7 @@
         </section>
 
     </main>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -242,9 +241,8 @@
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
             </ul>
-            <p class="footer-description">Votre partenaire de confiance pour les <strong>déménagements
-                    abordables</strong> à Montréal et
-                ses alentours. <br>© 2023 DemenagementAbordable</p>
+            <p class="footer-description">Your trusted partner for <strong>affordable moves</strong> in Montreal and
+                its surroundings.<br>© 2024 DemenagementAbordable</p>
         </div>
     </footer>
 
@@ -253,8 +251,6 @@
     <script src="/js/script.js"></script>
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WuEPw207qb9C6QiUT9R2m-ggF1CzrYs&callback=initMap"></script>
-
-
 
 </body>
 

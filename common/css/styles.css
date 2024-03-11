@@ -36,6 +36,7 @@ html {
 /*******************************************************************************************************************
 
 /* Navbar Styles */
+
 .navbar {
   display: flex;
   position: fixed;
@@ -73,6 +74,25 @@ html {
   transition: background-color var(--trans-speed) var(--trans-ease);
   border-radius: 0.4375em; /* 7px equivalent */
 }
+
+/* Example styles, adjust as needed */
+.lang-switch {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.language-text {
+  margin-right: 5px;
+}
+
+.language-icon {
+  font-size: 1.2rem;
+}
+
 /***************************************************************************************************************************
 /* Content Section Styles */
 .content-section {
