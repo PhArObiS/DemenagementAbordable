@@ -33,6 +33,10 @@ html {
   font-weight: 700;
 }
 
+.content-paragraph {
+  margin-bottom: 25px; /* Adjust the value as needed */
+}
+
 /*******************************************************************************************************************
 
 /* Navbar Styles */
@@ -407,6 +411,7 @@ html {
   .content-section .button a {
     font-size: 14px;
     padding: 10px 15px;
+    /* margin-top: 15px; */
   }
 
   /* Container and Row Styles */
