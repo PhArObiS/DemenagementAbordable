@@ -146,6 +146,20 @@ html {
   transition: background-color var(--trans-speed) var(--trans-ease);
 }
 
+/* Adding specific styles for .btn-primary */
+.btn-primary {
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin-top: 20px; /* Adds space between the paragraph and the button */
+  background-color: var(--main-color);
+  color: var(--light-color);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: var(--second-color);
+}
+
 .button a:hover {
   background-color: var(--main-color);
 }
@@ -695,3 +709,5 @@ html {
     justify-content: center;
   }
 }
+
+
